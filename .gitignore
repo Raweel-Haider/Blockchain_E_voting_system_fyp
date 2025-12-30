@@ -23,7 +23,6 @@ pnpm-debug.log*
 # =====================================
 # Hardhat / Blockchain
 # =====================================
-artifacts/
 cache/
 typechain/
 coverage/

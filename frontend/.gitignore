@@ -77,8 +77,9 @@ reports/
 # ===============================
 # Optional: Hardhat / Foundry frontend artifacts (if imported)
 # ===============================
-artifacts/
+
 cache/
+
 
 # ===============================
 # Misc
