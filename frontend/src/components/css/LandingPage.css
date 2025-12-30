@@ -1,0 +1,235 @@
+/* src/components/css/LandingPage.css */
+.landing-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.landing-content {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.landing-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 50px;
+}
+
+.landing-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.tagline {
+  font-size: 1.3rem;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.role-selection {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.role-selection h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.role-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.role-card {
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.role-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.role-card:hover::before {
+  transform: scaleX(1);
+}
+
+.role-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.admin-card:hover {
+  border-color: #dc3545;
+}
+
+.voter-card:hover {
+  border-color: #28a745;
+}
+
+.public-card:hover {
+  border-color: #007bff;
+}
+
+.role-icon {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.role-card h3 {
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.role-card > p {
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.role-features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.role-features li {
+  padding: 10px 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.role-features li::before {
+  content: '✓';
+  color: #28a745;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.role-auth {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.auth-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #e9ecef;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #495057;
+  font-weight: 500;
+}
+
+.auth-badge.no-auth {
+  background: #d4edda;
+  color: #155724;
+}
+
+.role-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.admin-btn {
+  background: #dc3545;
+  color: white;
+}
+
+.admin-btn:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.voter-btn {
+  background: #28a745;
+  color: white;
+}
+
+.voter-btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+.public-btn {
+  background: #007bff;
+  color: white;
+}
+
+.public-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+.landing-footer {
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+}
+
+.landing-footer p {
+  margin: 10px 0;
+  font-size: 1.1rem;
+}
+
+.network-info {
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .landing-header h1 {
+    font-size: 2rem;
+  }
+  
+  .tagline {
+    font-size: 1rem;
+  }
+  
+  .role-selection {
+    padding: 20px;
+  }
+  
+  .role-cards {
+    grid-template-columns: 1fr;
+  }
+}

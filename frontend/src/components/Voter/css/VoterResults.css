@@ -1,0 +1,974 @@
+/* src/components/Voter/css/VoterResults.css */
+.voter-results-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  padding: 20px;
+}
+
+/* Overall Statistics */
+.overall-stats {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.overall-stats h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  border-bottom: 3px solid #28a745;
+  padding-bottom: 10px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #28a745;
+}
+
+.stat-card.leading-party {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffedcc 100%);
+  border-color: #ffc107;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.leading-party .stat-value {
+  color: #f57c00;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Party Seats */
+.party-seats-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.party-seats-card h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.party-seats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.party-seat-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.party-name {
+  min-width: 150px;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.party-progress {
+  flex: 1;
+  height: 30px;
+  background: #e9ecef;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.party-progress-bar {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 15px;
+}
+
+.party-seats {
+  min-width: 120px;
+  text-align: right;
+  font-weight: 600;
+  color: #28a745;
+  font-size: 1.05rem;
+}
+
+/* Filter */
+.filter-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.filter-card h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 2px solid #e9ecef;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: #28a745;
+  background: #e8f5e9;
+}
+
+.filter-btn.active {
+  background: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+/* Constituency Results */
+.results-by-constituency {
+  margin-bottom: 30px;
+}
+
+.results-by-constituency h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+}
+
+.constituency-result-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.constituency-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.constituency-info h3 {
+  color: #333;
+  margin: 0 0 5px 0;
+  font-size: 1.5rem;
+}
+
+.province-tag {
+  background: #e8f5e9;
+  color: #28a745;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0;
+}
+
+.total-votes-badge {
+  background: #f8f9fa;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #666;
+}
+
+.winner-section {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffedcc 100%);
+  border: 3px solid #ffc107;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.winner-badge-small {
+  background: #ffc107;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.winner-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.winner-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.winner-party {
+  background: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: #f57c00;
+  border: 2px solid #ffc107;
+}
+
+.winner-votes {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f57c00;
+}
+
+.vote-percentage {
+  font-size: 1rem;
+  color: #999;
+  margin-left: 5px;
+}
+
+.candidates-details {
+  margin-top: 15px;
+}
+
+.candidates-details summary {
+  cursor: pointer;
+  padding: 12px 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #333;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.candidates-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.candidates-details summary::after {
+  content: '▼';
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.candidates-details[open] summary::after {
+  content: '▲';
+}
+
+.candidates-list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.candidate-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.candidate-row.winner-highlight {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffedcc 100%);
+  border-color: #ffc107;
+}
+
+.candidate-rank {
+  font-size: 1.5rem;
+  width: 40px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.candidate-info-small {
+  min-width: 180px;
+}
+
+.candidate-name-small {
+  font-weight: 600;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.candidate-party-small {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.candidate-votes-info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.votes-bar-container {
+  flex: 1;
+  height: 25px;
+  background: #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.votes-bar-fill {
+  height: 100%;
+  transition: width 0.5s ease;
+  border-radius: 12px;
+}
+
+.votes-text {
+  min-width: 120px;
+  text-align: right;
+  font-weight: 600;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.votes-percent {
+  font-size: 0.9rem;
+  color: #999;
+  margin-left: 5px;
+}
+
+/* Status Badges */
+.status-container {
+  display: flex;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status-badge.declared {
+  background: #d4edda;
+  color: #155724;
+  border: 2px solid #28a745;
+}
+
+.status-badge.pending {
+  background: #fff3cd;
+  color: #856404;
+  border: 2px solid #ffc107;
+}
+
+.status-badge.no-candidates {
+  background: #f8d7da;
+  color: #721c24;
+  border: 2px solid #dc3545;
+}
+
+/* No Data Section */
+.no-data-section {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.no-data-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.no-data-text {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Pending Section */
+.pending-section {
+  text-align: center;
+  padding: 30px 20px;
+  background: #fff9e6;
+  border-radius: 10px;
+  border: 2px solid #ffc107;
+}
+
+.pending-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.pending-text {
+  color: #856404;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.candidate-count-text {
+  color: #856404;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.pending-candidates-details {
+  margin-top: 20px;
+}
+
+.pending-candidates-details summary {
+  cursor: pointer;
+  padding: 12px 15px;
+  background: white;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #856404;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pending-candidates-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.pending-candidates-details summary::after {
+  content: '▼';
+  font-size: 0.8rem;
+}
+
+.pending-candidates-details[open] summary::after {
+  content: '▲';
+}
+
+.pending-candidates-list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pending-candidate-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  background: white;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.candidate-number {
+  font-weight: 700;
+  color: #856404;
+  min-width: 25px;
+}
+
+.candidate-name {
+  flex: 1;
+  font-weight: 600;
+  color: #333;
+}
+
+.candidate-party-tag {
+  background: #fff3cd;
+  color: #856404;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Card Variants */
+.constituency-result-card.has-winner {
+  border-left: 5px solid #28a745;
+}
+
+.constituency-result-card.has-candidates {
+  border-left: 5px solid #ffc107;
+}
+
+.constituency-result-card.no-candidates {
+  border-left: 5px solid #dc3545;
+  opacity: 0.8;
+}
+
+.total-votes-info {
+  text-align: right;
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Summary Card */
+.summary-card {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.summary-card h3 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  border-bottom: 3px solid #28a745;
+  padding-bottom: 10px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.summary-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.summary-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.summary-value.declared {
+  color: #28a745;
+}
+
+.summary-value.pending {
+  color: #ffc107;
+}
+
+@media (max-width: 768px) {
+  .stats-grid,
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .filter-buttons {
+    flex-direction: column;
+  }
+  
+  .filter-btn {
+    width: 100%;
+  }
+}
+
+.voter-results-header {
+  max-width: 1000px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-back {
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-back:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.voter-results-header h1 {
+  color: #28a745;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.voter-results-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.constituency-banner {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.constituency-banner h2 {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.constituency-banner p {
+  color: #333;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.loading-card {
+  background: white;
+  border-radius: 15px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #e9ecef;
+  border-top-color: #28a745;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-card p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.winner-card {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  text-align: center;
+  border: 4px solid #ffc107;
+}
+
+.winner-badge {
+  background: white;
+  color: #ffc107;
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.winner-info h2 {
+  color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.winner-party {
+  color: #666;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.winner-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #666;
+}
+
+.total-votes-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.total-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-label {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.total-value {
+  font-size: 2rem;
+  color: #28a745;
+  font-weight: 700;
+}
+
+.no-results-card {
+  background: white;
+  border-radius: 15px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.no-results-card .icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.no-results-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.no-results-card p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.results-table {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.results-table h3 {
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 1.6rem;
+  border-bottom: 3px solid #28a745;
+  padding-bottom: 10px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.result-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.result-row:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.result-row.winner-row {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffedcc 100%);
+  border-color: #ffc107;
+}
+
+.rank {
+  font-size: 2rem;
+  font-weight: 700;
+  width: 50px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.candidate-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.candidate-info h4 {
+  color: #333;
+  margin: 0 0 5px 0;
+  font-size: 1.3rem;
+}
+
+.candidate-info p {
+  color: #666;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.vote-info {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.vote-count {
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.vote-bar {
+  flex: 1;
+  height: 30px;
+  background: #e9ecef;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+.vote-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #28a745, #20c997);
+  transition: width 1s ease;
+  border-radius: 15px;
+}
+
+.result-row.winner-row .vote-fill {
+  background: linear-gradient(90deg, #ffc107, #ffed4e);
+}
+
+.vote-percentage {
+  font-weight: 700;
+  color: #28a745;
+  min-width: 60px;
+  text-align: right;
+  font-size: 1.1rem;
+}
+
+.result-row.winner-row .vote-percentage {
+  color: #ff9800;
+}
+
+.info-card {
+  background: #d1ecf1;
+  border-radius: 15px;
+  padding: 25px;
+  border-left: 5px solid #17a2b8;
+}
+
+.info-card h3 {
+  color: #0c5460;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.info-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-card li {
+  color: #0c5460;
+  padding: 10px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-card li::before {
+  content: '✓';
+  color: #17a2b8;
+  font-weight: bold;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .voter-results-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .voter-results-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .winner-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .result-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .vote-info {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

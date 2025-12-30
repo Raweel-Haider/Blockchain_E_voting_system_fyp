@@ -1,0 +1,87 @@
+# ===============================
+# Dependencies
+# ===============================
+node_modules/
+.pnp/
+.pnp.js
+
+# ===============================
+# Vite / React build output
+# ===============================
+dist/
+dist-ssr/
+build/
+
+# ===============================
+# Environment variables (CRITICAL for blockchain apps)
+# ===============================
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+
+# Optional: keep example env
+!.env.example
+
+# ===============================
+# Wallet / Blockchain sensitive files
+# ===============================
+wallets/
+keystore/
+privateKeys/
+*.key
+*.pem
+*.seed
+
+# ===============================
+# Logs
+# ===============================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# ===============================
+# OS files
+# ===============================
+.DS_Store
+Thumbs.db
+
+# ===============================
+# Editor / IDE
+# ===============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===============================
+# TypeScript
+# ===============================
+*.tsbuildinfo
+
+# ===============================
+# Coverage / Tests
+# ===============================
+coverage/
+reports/
+
+# ===============================
+# Cache
+# ===============================
+.cache/
+.eslintcache
+
+# ===============================
+# Optional: Hardhat / Foundry frontend artifacts (if imported)
+# ===============================
+artifacts/
+cache/
+
+# ===============================
+# Misc
+# ===============================
+*.tgz
+*.zip
